@@ -1,0 +1,37 @@
+<h1>#HashtagPoems</h1>
+
+<div >
+<%= link_to "Load Poems", '/pages/getinstagramposts',:class => "btn"%>
+<%= @medias %>
+</div>
+<div>
+<table class = "container">
+  <thead>
+    <tr>
+      <th>Hashtags</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+       
+      <tr>
+        <td><%= page.hashtags %></td>
+        <td><%#= link_to 'Show', page %></td>
+        <td><%#= link_to 'Edit', edit_page_path(page) %></td>
+        <td><%#= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+      <tr><td> ---------------------------------------------------------------------------------------------</td></tr>
+
+    <% end %>
+
+  </tbody>
+
+</table>
+</div>
+<div><%= will_paginate @pages, previous_label: h("<- Previous"), next_label: h("Next ->") %></div>
+<br>
+
+<%#= link_to 'New Page', new_page_path %>
